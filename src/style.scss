@@ -1,8 +1,65 @@
 $lightGreen:#b9e7e7;
 
 .app{
+    display: flex;
+    justify-content: center;
     .container{
-        
+        width: 1024px;
+
+        .link{
+            text-decoration: none;
+            color: inherit;
+        }
+        //Navbar
+        .navbar{
+            .container{
+                padding: 10px 0px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                .logo{
+                    img{
+                        width: 100px;
+                        object-fit: cover;
+                    }
+                }
+                .links{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    h6{
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+                    span{
+                        cursor: pointer;
+                        font-weight: 500;
+                    }
+                    .write{
+                        background-color: $lightGreen;
+                        width: 50px;
+                        height:50px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 300;
+                        
+                        &:hover{
+                            color: teal;
+                            width: 48px;
+                            height: 48px;
+                            background-color: white;
+                            font-weight:400;
+                            border:1px solid teal;
+                        }
+                    }
+
+                }
+            }
+        }
         //Login And Register
         .auth{
             display: flex;
@@ -47,6 +104,23 @@ $lightGreen:#b9e7e7;
                 span{
                     font-size: 12px;
                     text-align: center;
+                }
+            }
+        }
+
+        //Footer
+        .footer{
+            
+            footer{
+                margin-top:100px;
+                padding: 20px;
+                background-color: $lightGreen;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 12px;
+                img{
+                    height: 50px;
                 }
             }
         }
