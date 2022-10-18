@@ -103,10 +103,17 @@ $lightGreen:#b9e7e7;
                     cursor: pointer;
                 }
 
-                p {
+                .error{
                     font-size: 12px;
+                    font-weight: bold;
                     color: red;
                     text-align: center;
+                }
+                .success{
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: teal;
+                    text-align: center; 
                 }
 
                 span {
@@ -127,13 +134,16 @@ $lightGreen:#b9e7e7;
                 .post {
                     display: flex;
                     gap: 100px;
-                    &:nth-child(2n+1){
+
+                    &:nth-child(2n+1) {
                         flex-direction: row-reverse;
                     }
+
                     .img {
                         flex: 2;
                         position: relative;
-                        &::after{
+
+                        &::after {
                             content: "";
                             width: 100%;
                             height: 100%;
@@ -144,6 +154,7 @@ $lightGreen:#b9e7e7;
                             z-index: -1;
 
                         }
+
                         img {
                             width: 100%;
                             max-height: 400px;
@@ -157,24 +168,24 @@ $lightGreen:#b9e7e7;
                         flex-direction: column;
                         justify-content: space-between;
 
-                        h1{
+                        h1 {
                             font-size: 48px;
                         }
 
-                        p{
+                        p {
                             font-size: 18px;
                         }
 
-                        button{
+                        button {
                             width: max-content;
                             padding: 10px 20px;
                             border: none;
                             cursor: pointer;
                             background-color: white;
                             border: 1px solid teal;
-                            color: teal; 
+                            color: teal;
 
-                            &:hover{
+                            &:hover {
                                 border: 1px solid white;
                                 background-color: teal;
                                 color: white;
@@ -185,31 +196,33 @@ $lightGreen:#b9e7e7;
                 }
             }
         }
+
         //Single post page
-        .single{
+        .single {
             display: flex;
             gap: 50px;
 
-            .content{
+            .content {
                 flex: 5;
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
 
-                img{
+                img {
                     width: 100%;
                     height: 300px;
                     object-fit: cover;
 
                 }
-                .user{
+
+                .user {
                     margin-top: 5px;
                     display: flex;
                     align-items: center;
                     gap: 10px;
                     font-size: 14px;
-                    
-                    img{
+
+                    img {
                         width: 50px;
                         height: 50px;
                         border-radius: 50%;
@@ -217,32 +230,35 @@ $lightGreen:#b9e7e7;
                         background-color: $lightGreen;
                     }
 
-                    span{
+                    span {
                         font-weight: bold;
 
                     }
                 }
 
-                .edit{
+                .edit {
                     display: flex;
-                    gap:5px;
+                    gap: 5px;
 
-                    img{
+                    img {
                         width: 20px;
                         height: 20px;
                         cursor: pointer;
                     }
                 }
-                h1{
+
+                h1 {
                     font-size: 42px;
-                    color:#333;
+                    color: #333;
                 }
-                .tags{
+
+                .tags {
                     display: flex;
                     align-items: center;
                     gap: 3px;
-                    .tag{
-                        background-color:$lightGreen;
+
+                    .tag {
+                        background-color: $lightGreen;
                         padding: 5px;
                         color: teal;
                         font-size: 14px;
@@ -250,12 +266,74 @@ $lightGreen:#b9e7e7;
                         border-radius: 8px;
                     }
                 }
-                p{
+
+                p {
                     text-align: justify;
                     line-height: 30px;
                 }
+
+                .comments {
+                    box-sizing: border-box;
+                    border:1px solid #555;
+                    .container {
+                        width: 700px;
+                        max-width: 100%;
+                        max-height: 70vh;
+                        margin: auto;
+                        padding: 0 30px;
+                        background-color: #fff;
+                        border: 1px solid transparent;
+                        overflow: auto;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+
+                        .comment {
+                            position: relative;
+                            margin: 20px auto;
+
+                            .comment-heading {
+                                display: flex;
+                                align-items: center;
+                                height: 50px;
+                                font-size: 14px;
+
+                                .comment-info {
+                                    color: rgba(0, 0, 0, 0.5);
+
+                                    .author {
+                                        font-weight: 600;
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+
+                            .comment-body {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                gap: 4px;
+
+                                .actions {
+                                    display: flex;
+                                    gap: 5px;
+
+                                    button{
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .replies {
+                                    margin-left: 20px;
+                                }
+                            }
+                        }
+
+                    }
+                }
             }
-            .menu{
+
+            .menu {
                 flex: 2;
                 display: flex;
                 flex-direction: column;
@@ -263,34 +341,37 @@ $lightGreen:#b9e7e7;
                 overflow: auto;
                 height: 100vh;
 
-                h1{
+                h1 {
                     font-size: 20px;
                     color: #555;
 
                 }
-                .post{
+
+                .post {
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
 
-                    img{
+                    img {
                         width: 100%;
                         height: 200px;
                         object-fit: cover;
                     }
-                    h2{
+
+                    h2 {
                         color: #555;
                     }
-                    button{
+
+                    button {
                         width: max-content;
                         padding: 7.5px 15px;
                         border: none;
                         cursor: pointer;
                         background-color: white;
                         border: 1px solid teal;
-                        color: teal; 
+                        color: teal;
 
-                        &:hover{
+                        &:hover {
                             border: 1px solid white;
                             background-color: teal;
                             color: white;
@@ -300,42 +381,44 @@ $lightGreen:#b9e7e7;
                 }
             }
         }
+
         //Write Page
-        .create{
+        .create {
             margin-top: 20px;
             display: flex;
             gap: 20px;
 
-            .content{
+            .content {
                 flex: 5;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
 
-                input{
+                input {
                     padding: 10px;
                     border: 1px solid lightgrey;
                 }
 
-                .writerContainer{
+                .writerContainer {
                     height: 300px;
                     overflow: auto;
-                    border:1px solid gray;
-                    
-                    .writer{
+                    border: 1px solid gray;
+
+                    .writer {
                         height: 100%;
                         border: none;
                     }
                 }
 
             }
-            .menu{
+
+            .menu {
                 flex: 2;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
 
-                .item{
+                .item {
                     flex: 1;
                     border: 1px solid lightgray;
                     padding: 10px;
@@ -345,55 +428,64 @@ $lightGreen:#b9e7e7;
                     font-size: 12px;
                     color: #555;
 
-                    h1{
+                    h1 {
                         font-size: 20px;
 
                     }
-                    label{
+
+                    label {
                         text-decoration: underline;
                         cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        gap: 3px;
+                        margin: 5px;
                     }
 
-                    .buttons{
+                    .buttons {
                         display: flex;
                         justify-content: space-between;
 
-                        :first-child{
+                        :first-child {
                             cursor: pointer;
                             color: rgb(30, 199, 232);
                             background-color: white;
                             border: 1px solid rgb(30, 199, 232);
                             padding: 3px 5px;
-                            &:hover{
+
+                            &:hover {
                                 color: white;
                                 background-color: rgb(30, 199, 232);
                             }
                         }
-                        :last-child{
+
+                        :last-child {
                             cursor: pointer;
                             color: teal;
                             background-color: white;
                             border: 1px solid teal;
                             padding: 3px 5px;
-                            &:hover{
+
+                            &:hover {
                                 color: white;
                                 background-color: teal;
                             }
                         }
                     }
-                    .tagInputContainer{
+
+                    .tagInputContainer {
                         display: flex;
                         align-items: center;
                         justify-content: space-around;
 
-                        button{
+                        button {
                             cursor: pointer;
                             color: teal;
                             border: 1px solid teal;
                             background-color: white;
                             padding: 3px 5px;
-                            
-                            &:hover{
+
+                            &:hover {
                                 color: white;
                                 font-weight: bold;
                                 background-color: teal;
@@ -401,12 +493,12 @@ $lightGreen:#b9e7e7;
                         }
                     }
 
-                    .tags{
+                    .tags {
                         height: 80px;
                         border: 1px solid lightgray;
                         display: flex;
                         overflow: auto;
-                        flex-wrap:wrap;
+                        flex-wrap: wrap;
                         gap: 3px;
 
                         .tag {
@@ -421,7 +513,8 @@ $lightGreen:#b9e7e7;
                             align-items: center;
                             justify-content: space-between;
                             gap: 4px;
-                            img{
+
+                            img {
                                 height: 17px;
                                 cursor: pointer;
                                 opacity: .5;
