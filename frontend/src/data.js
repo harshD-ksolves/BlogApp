@@ -24,3 +24,41 @@ export const posts = [
       img: "https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
   ];
+
+export const comments=[
+  {
+    id:0,
+    text:'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    post:1,
+    user:2,
+    parent:null,
+  },
+  {
+    id:1,
+    text:'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    post:1,
+    user:2,
+    parent:null,
+  },{
+    id:2,
+    text:'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    post:1,
+    user:2,
+    parent:1,
+  },
+  {
+    id:3,
+    text:'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    post:1,
+    user:2,
+    parent:1,
+  },
+  {
+    id:4,
+    text:'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    post:1,
+    user:2,
+    parent:3,
+  }
+  
+]

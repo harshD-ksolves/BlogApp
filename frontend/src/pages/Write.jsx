@@ -1,14 +1,18 @@
 import React ,{useState}from 'react'
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { uploadFile } from '../helpers/firebase';
 import closeIcon from '../imgs/close.png';
-
+import uploadIcon from '../imgs/upload.png';
 
 const Write = () => {
+
   const [title,setTitle]=useState("");
   const [value,setValue]=useState('');
   const [tags,setTags]=useState([]);
   const [tag,setTag]=useState("");
+  const [img,setImg]=useState(null);
+  const [status,setStatus]=useState("Draft");
 
   const AddTag=(e)=>{
     e.preventDefault();
@@ -17,11 +21,19 @@ const Write = () => {
       setTag("");
     }
   }
+  
   const removeTag=(i)=>{
     
     setTags(tags=>tags.filter((tag,index)=> index!==i))
     
   }
+  
+  const handleSubmit= async (e)=>{
+    e.preventDefault();
+    const image =await uploadFile(img);
+    
+  }
+
 
 
   return (
@@ -36,16 +48,16 @@ const Write = () => {
         <div className="item">
           <h1>Publish</h1>
           <span>
-            <b>Status:</b> Draft
+            <b>Status:</b> {status}
           </span>
-          <span>
-            <b>Visibility:</b> public
-          </span>
-          <label htmlFor="image">Upload Blog Image</label>
-          <input type="file" id="image"  style={{display:"none"}}/>
+          <label htmlFor="image">
+            <img src={uploadIcon} style={{width:'25px'}} alt="uploadIcon"/><span>Upload Blog Image</span> 
+          </label>
+          <span style={{padding:'3px',marginBottom:'4px',fontWeight:'500',fontSize:'14px'}}>{img?.name}</span>
+          <input type="file" id="image" onChange={(e)=>setImg(e.target.files[0])} accept="image/x-png,image/gif,image/jpeg" style={{display:"none"}}/>
           <div className="buttons">
             <button>Save as Draft</button>
-            <button>Update</button>
+            <button onClick={(e)=>handleSubmit(e)}>Update</button>
           </div>
         </div>
         <div className="item">
